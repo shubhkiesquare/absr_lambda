@@ -390,73 +390,74 @@ def add_product_info(url):
             return(get_add_info_2(soup))
     else :
         add_product_info(url)    
-        
-df1 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
-                   'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
-df1 = extract_product_info(gng,df1)
-df1['category'] = 'Grocery & Gourmet Foods'
+def handler(event=None, context=None):
 
-df2 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
-                   'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
-df2 = extract_product_info(ctnb,df2)
-df2['category'] = 'Coffee Tea & Beverages'
+    df1 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
+                       'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
+    df1 = extract_product_info(gng,df1)
+    df1['category'] = 'Grocery & Gourmet Foods'
 
-
-df3 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
-                   'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
-df3 = extract_product_info(cff,df3)
-df3['category'] = 'Coffee'
-
-df4 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
-                   'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
-df4 = extract_product_info(wcb,df4)
-df4['category'] = 'Whole Coffee Beans'
+    df2 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
+                       'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
+    df2 = extract_product_info(ctnb,df2)
+    df2['category'] = 'Coffee Tea & Beverages'
 
 
-df5 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
-                   'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
-df5 = extract_product_info(rst,df5)
-df5['category'] = 'Roasted'
+    df3 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
+                       'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
+    df3 = extract_product_info(cff,df3)
+    df3['category'] = 'Coffee'
+
+    df4 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
+                       'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
+    df4 = extract_product_info(wcb,df4)
+    df4['category'] = 'Whole Coffee Beans'
 
 
-
-df6 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
-                   'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
-df6 = extract_product_info(unrst,df6)
-df6['category'] = 'Unroasted'
-
-df7 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
-                   'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
-df7 = extract_product_info(hnpc,df7)
-df7['category'] = 'Health & Personal Care'
-
-
-df8 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
-                   'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
-df8 = extract_product_info(bathnsh,df8)
-df8['category'] = 'Bath & Shower'
-
-
-df9 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
-                   'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
-df9 = extract_product_info(healthc,df9)
-df9['category'] = 'Health Care'
-
-
-df10 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
-                   'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
-df10 = extract_product_info(oralc,df10)
-df10['category'] = 'Oral Care'
-
-
-df11 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
-                   'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
-df11 = extract_product_info(skinc,df11)
-df11['category'] = 'skinc Care'
+    df5 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
+                       'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
+    df5 = extract_product_info(rst,df5)
+    df5['category'] = 'Roasted'
 
 
 
-df_wai = pd.concat([df1,df2,df3,df4,df5,df6,df7,df8,df9,df10,df11], axis = 0)
-df_wai.info()
+    df6 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
+                       'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
+    df6 = extract_product_info(unrst,df6)
+    df6['category'] = 'Unroasted'
+
+    df7 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
+                       'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
+    df7 = extract_product_info(hnpc,df7)
+    df7['category'] = 'Health & Personal Care'
+
+
+    df8 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
+                       'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
+    df8 = extract_product_info(bathnsh,df8)
+    df8['category'] = 'Bath & Shower'
+
+
+    df9 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
+                       'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
+    df9 = extract_product_info(healthc,df9)
+    df9['category'] = 'Health Care'
+
+
+    df10 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
+                       'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
+    df10 = extract_product_info(oralc,df10)
+    df10['category'] = 'Oral Care'
+
+
+    df11 = pd.DataFrame({'date' : [], 'product_rank' : [],'product_name' :[],'product_total_review' :[], 'product_total_rating': [], 'product_Price': [],
+                       'brand' : [], 'net_quantity' : [], 'Weight' : [], 'asin' : [], 'manufacturer': []})
+    df11 = extract_product_info(skinc,df11)
+    df11['category'] = 'skinc Care'
+
+
+
+    df_wai = pd.concat([df1,df2,df3,df4,df5,df6,df7,df8,df9,df10,df11], axis = 0)
+    return("success")
 
 
