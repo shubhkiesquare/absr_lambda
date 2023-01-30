@@ -9,6 +9,9 @@ import datetime
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
+from requests import session
+from tempfile import mkdtemp
+s = session()
 
 
 gng= "https://www.amazon.in/gp/bestsellers/grocery/ref=zg_bs_unv_grocery_1_4861584031_3"
